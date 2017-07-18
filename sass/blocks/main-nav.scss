@@ -1,0 +1,351 @@
+.main-nav {
+  position: relative;
+  min-width: 320px;
+  margin: 0 auto;
+  min-height: 51px;
+
+  &__lists,
+  &__user {
+    @include no-list-style;
+  }
+
+  //Style links
+  &__list a {
+    display: block;
+    padding: 11px 20px;
+
+    font-family: $font-family-bold;
+    font-size: 1.8em;
+    text-transform: uppercase;
+
+    background-color: $color-btn-primary;
+    border-top: 1px solid #886e5b;
+    border-bottom: 1px solid #71543f;
+  }
+
+  &__list a[href] {
+    &:hover {
+      background-color: $color-btn-primary-hover;
+    }
+
+    &:active {
+      color: rgba($color-text-white, .3);
+    }
+  }
+
+  //Block user
+  &__user {
+    position: relative;
+  }
+
+  &__user-login a {
+    @include font-size-regular;
+    display: block;
+    padding: 11px 20px;
+    padding-left: 50px;
+
+    background-color: $color-brown-darken;
+
+    &:active {
+      color: rgba($color-text-white, .3);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      width: 16px;
+      height: 16px;
+      margin-top: -8px;
+
+      background: url(../img/sprites-login.svg) no-repeat 50% 0;
+      background-size: 16px 90px;
+      opacity: .3;
+    }
+  }
+}
+
+@include mobile {
+  .main-nav {
+    &__toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 70px;
+      height: 51px;
+
+      font-size: 0;
+
+      background-color: $color-brown-dark;
+      border: 0;
+      outline: none;
+
+      &:hover {
+        background-color: $color-brown-darken;
+      }
+    }
+
+    //Hamburger button
+    &__toggle,
+    &--show .main-nav__toggle {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 36px;
+        height: 2px;
+        margin-left: -18px;
+
+        background-color: $color-white;
+      }
+
+      &:active::before,
+      &:active::after {
+        opacity: .3;
+      }
+    }
+
+    &__toggle {
+      &::before {
+        top: 16px;
+        box-shadow: 0 8px 0 0 #fff;
+      }
+
+      &::after {
+        bottom: 17px;
+      }
+    }
+
+    //Show cross menu
+    &--show .main-nav__toggle {
+      left: 0;
+      animation: sideright .5s;
+
+      &::before {
+        top: 23px;
+        box-shadow: none;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        bottom: 26px;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &--show .main-nav__wrapper {
+      position: absolute;
+      top: 0;
+      left: 70px;
+      right: 0;
+      z-index: 4000;
+      height: 100vh;
+
+      background-color: $color-brown-darken;
+      animation: sideright .5s;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        z-index: 2;
+        width: 10px;
+        height: 100%;
+
+        box-shadow: inset 4px 0 8px -2px rgba($color-black, .4);
+      }
+    }
+
+    &--show .main-nav__list,
+    &--show .main-nav__user  {
+      display: block;
+    }
+
+    &__list,
+    &__user {
+      display: none;
+    }
+
+    &--active {
+      display: block;
+
+      a {
+        padding-right: 70px;
+        padding-left: 70px;
+        text-align: center;
+      }
+    }
+
+    &--show .main-nav--active a {
+      text-align: left;
+      padding-left: 20px;
+
+      color: rgba($color-text-white, .3);
+    }
+
+    @keyframes sideright {
+      0% {
+        transform: translateX(300px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  //no-js//--------------------------
+  .no-js .main-nav__list,
+  .no-js .main-nav__user {
+    display: block;
+  }
+
+  .no-js {
+    .main-nav__toggle {
+      display: none;
+    }
+
+    .main-nav--active a {
+      text-align: left;
+      padding-left: 20px;
+
+      color: rgba($color-text-white, .3);
+    }
+  }
+}
+
+@include tablet {
+  .main-nav {
+    width: auto;
+    color: $color-text-white;
+    background-color: $color-black;
+
+    &__wrapper {
+      @include container;
+      @include clearfix;
+      min-height: 70px;
+      background-color: $color-black;
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__lists {
+      float: left;
+      width: 575px / 640px * 100%;
+    }
+
+    &__list {
+      float: left;
+
+      a {
+        padding: 21px 16px;
+
+        background-color: $color-black;
+        border: 0;
+      }
+    }
+
+    &__list a[href] {
+      &:hover {
+        color: $color-text-link-hover;
+        background-color: $color-black;
+      }
+
+      &:active {
+        color: rgba($color-text-white, .3);
+      }
+    }
+
+    &--active {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        right: 16px;
+        left: 16px;
+        bottom: -3px;
+        width: auto;
+        height: 3px;
+
+        background-color: $color-brown;
+      }
+    }
+
+    //Block user
+    &__user {
+      float: right;
+      width: 65px / 640px * 100%;
+    }
+
+    &__user-login a {
+      padding-top: 35px;
+      padding-bottom: 35px;
+      font-size: 0;
+      background-color: $color-black;
+
+      &:hover::before {
+        background-image: url(../img/sprites-login.svg);
+        background-position-y: -34px;
+        opacity: 1;
+      }
+
+      &:active::before {
+        background-image: url(../img/sprites-login.svg);
+        background-position-y: 0;
+        opacity: .3;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .main-nav {
+    &__lists {
+      width: 840px / 960px * 100%;
+    }
+
+    &__list a {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    &__list a[href]:hover,
+    &__user-login a:hover  {
+      color: $color-text-black;
+      background-color: $color-white;
+    }
+
+    &__list a[href]:active,
+    &__user-login a:active  {
+      color: rgba($color-text-black, .3);
+    }
+
+    &__user-login a {
+      padding-top: 21px;
+      padding-bottom: 21px;
+
+      font-family: $font-family-bold;
+      font-size: 1.8em;
+      text-transform: uppercase;
+
+      &:hover::before {
+        background-image: url(../img/sprites-login.svg);
+        background-position-y: -17px;
+        opacity: .3;
+      }
+
+      &:active::before {
+        background-color: rgba($color-black, .1);
+      }
+    }
+
+    &__user {
+      width: 120px / 960px * 100%;
+    }
+  }
+}

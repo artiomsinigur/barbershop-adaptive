@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--for better supporting IE9 or IE8-->
+    <title>Записаться | Barbershop Borodinski</title>
+    <meta name="description" content="Shop beard for the real men">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <header class="page-header header-inner">
+        <div  class="page-header__logo">
+            <a href="index.html">
+                <picture>
+                    <source media="(min-width:1200px)"
+                            srcset="img/logo-desktop.svg">
+                    <source media="(min-width:768px)"
+                            srcset="img/logo-tablet.svg">
+                    <source media="(min-width:320px)"
+                            srcset="img/logo-mobil.svg">
+                    <img src="img/logo-desktop.png" alt="">
+                </picture>
+            </a>
+        </div>
+
+        <!--Main navigation
+        --------------------------------------------->
+        <!--<button class="main-nav__open" type="button">Открыть меню</button>-->
+        <nav class="main-nav">
+            <button class="main-nav__toggle" type="button">Закрыть меню</button>
+
+            <div class="main-nav__wrapper">
+                <ul class="main-nav__lists">
+                    <li class="main-nav__list"><a href="index.html">Главная</a></li>
+                    <li class="main-nav__list"><a href="our-works.html">Наши работы</a></li>
+                    <li class="main-nav__list  main-nav--active"><a>Записаться</a></li>
+                    <li class="main-nav__list"><a href="#">Контакты</a></li>
+                </ul>
+                <ul class="main-nav__user">
+                    <li class="main-nav__user-login"><a href="login.html">Вход</a></li>
+                </ul>
+            </div>
+        </nav><!--End main navigation-->
+    </header><!--End page header-->
+
+    <!--Section form
+    -------------------------------------------->
+    <main class="main">
+        <div class="breadcrumbs">
+            <h1 class="breadcrumbs__title">Запись на стрижку</h1>
+            <a class="breadcrumbs__go-home  btn-secondary" href="index.html">На главную</a>
+        </div>
+        <section class="form">
+            <div class="form__wrapper">
+                <form class="form__subscribe" action="" method="post">
+                    <fieldset class="form__person">
+                        <div>
+                            <input type="text" name="family" placeholder="Фамилия" required autofocus>
+                        </div>
+                        <div>
+                            <input type="text" name="name" placeholder="Имя" required>
+                        </div>
+                        <div>
+                            <input type="text" name="surnome" placeholder="Отчество">
+                        </div>
+                    </fieldset>
+                    <fieldset class="form__contact">
+                        <div>
+                            <input type="tel" name="telephone" placeholder="Контактный телефон" required>
+                        </div>
+                        <div>
+                            <input type="email" name="email" placeholder="Контактный e-mail">
+                        </div>
+                    </fieldset>
+                    <fieldset class="form__comment">
+                        <div>
+                            <textarea placeholder="Доп. информация для мастера"></textarea>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form__beard">
+                        <legend class="title-line"><span>ВЫберите модель бороды:</span></legend>
+                        <div>
+                            <label class="radio beard1" for="admiral">адмирал
+                                <input id="admiral" type="radio" name="beard" value="admiral">
+                                <span class="radio-indicator"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="radio beard2" for="lesorub">лесоруб
+                                <input id="lesorub" type="radio" name="beard" value="lesorub">
+                                <span class="radio-indicator"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="radio beard3" for="polearnik">полярник
+                                <input id="polearnik" type="radio" name="beard" value="polearnik">
+                                <span class="radio-indicator"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="radio beard4" for="boiarin">боярин
+                                <input id="boiarin" type="radio" name="beard" value="boiarin">
+                                <span class="radio-indicator"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="radio beard5" for="mudret">мудрец
+                                <input id="mudret" type="radio" name="beard" value="mudret">
+                                <span class="radio-indicator"></span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form__services">
+                        <legend class="title-line"><span>Дополнительные услуги:</span></legend>
+                        <div>
+                            <label class="checkbox" for="color-barbe">Подкрасить бороду
+                                <input id="color-barbe" type="checkbox" name="service1" value="Podcrasiti borodu">
+                                <span class="check-indicator"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox" for="nakrutiti-usi">Накрутить усы
+                                <input id="nakrutiti-usi" type="checkbox" name="service2" value="Nakrutiti usi">
+                            <span class="check-indicator"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox" for="pricesati-borodu">Причесать бороду
+                                <input id="pricesati-borodu" type="checkbox" name="service3" value="Pricesati borodu">
+                            <span class="check-indicator"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox" for="podravneati-viski">Подровнять виски
+                                <input id="podravneati-viski" type="checkbox" name="service4" value="Podravneati viski">
+                            <span class="check-indicator"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox" for="ubrati-siedinu">Убрать седину
+                                <input id="ubrati-siedinu" type="checkbox" name="service5" value="Ubrati siedinu">
+                            <span class="check-indicator"></span>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="checkbox" for="otpolirovati-lisinu">Отполировать лысину
+                                <input id="otpolirovati-lisinu" type="checkbox" name="service6" value="Otpolirovati lisinu">
+                            <span class="check-indicator"></span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <button class="form__submit btn-primary" type="submit">Отправить заявку</button>
+                </form>
+            </div>
+        </section><!--End form-->
+    </main>
+
+    <!--Footer
+    ------------------------------------------->
+    <footer class="page-footer">
+        <div class="page-footer__wrapper">
+            <div class="page-footer__column page-footer__contacts">
+                <p>
+                    <b>Барбершоп Бородинский</b><br>
+                    г. Санкт-Петербург, ул. Большая Конюшенная 19/8
+                </p>
+                <a class="page-footer__tel btn-third" href="tel:+33123456789"><span>Тел.:</span>+33 (123) 222-33-44</a>
+            </div>
+
+            <div class="page-footer__column page-footer__social">
+                <b>Давайте дружить!</b>
+                <div class="social-links">
+                    <a class="social-link social-link--vk btn-third" href="#" target="_blank">VKontakt</a>
+                    <a class="social-link social-link--fb btn-third" href="#" target="_blank">Facebook</a>
+                    <a class="social-link social-link--inst btn-third" href="#" target="_blank">Instagram</a>
+                </div>
+            </div>
+
+            <div class="page-footer__column page-footer__copyright">
+                <b>Разработано:</b>
+                <a class="page-footer__copyright-link btn-third" href="#" target="_blank">Artysimple</a>
+            </div>
+        </div>
+    </footer><!--End main footer-->
+
+    <!--Modal login
+        -------------------------------------------->
+    <div class="modal-login">
+        <button class="modal-login__cross cross" type="button"></button>
+        <h2>ЛИЧНЫЙ КАБИНЕТ</h2>
+        <p>Ведите свой логин и пароль</p>
+        <form class="modal-login__form" action="" method="post">
+            <label class="modal-login__field">
+                <input type="text" name="login" placeholder="Логин" required>
+                <span class="modal-login__item  modal-login--login"></span>
+            </label>
+            <label class="modal-login__field">
+                <input type="password" name="pass" placeholder="Пароль" required>
+                <span class="modal-login__item  modal-login--pass"></span>
+            </label>
+            <div>
+                <label class="checkbox">Запомните меня!
+                    <input type="checkbox" name="save-me" checked>
+                    <span class="check-indicator"></span>
+                </label>
+                <a class="modal-login__new-pass" href="#">Я забыл пароль!</a>
+            </div>
+            <button class="modal-login__submit btn-primary" type="submit">Войти</button>
+            <button class="modal-login__close btn-secondary" type="button">Закрыть</button>
+        </form>
+    </div><!--End modal login-->
+    <div class="modal-overlay"></div>
+
+    <!--Script
+    ------------------------------------------->
+    <script>
+        var html = document.documentElement;
+        html.className = html.className.replace("no-js","js");
+    </script>
+
+    <script src="js/build/production.min.js"></script>
+</body>
+</html>

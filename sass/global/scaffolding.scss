@@ -1,0 +1,219 @@
+body {
+  position: relative;
+  margin: 0;
+  font-family: $font-family-regular;
+  font-size: 62.5%;
+  line-height: 1.5;
+  color: $color-text-black;
+  background-color: $color-bg-darkgrey;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: PTSans;
+  font-weight: 400;
+  src: url(../fonts/ptsansnarrow.woff) format("woff"),
+      url(../fonts/ptsansnarrow.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: PTSansBold;
+  font-weight: 700;
+  src: url(../fonts/ptsansnarrowbold.woff) format("woff"),
+      url(../fonts/ptsansnarrowbold.woff2) format("woff2");
+}
+
+//Global tags rules//----------------------
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: $color-text-white;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  @include font-size-large;
+  color: $color-text-black;
+  text-transform: uppercase;
+}
+
+p {
+  margin-top: 0;
+  @include  font-size-regular;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+//Global class rules//---------------------
+.visually-hidden {
+  position: absolute;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.title-line {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  font-size: 3em;
+  text-align: center;
+
+  span::before {
+    content: '';
+    margin-left: calc(-100% - 25px);
+  }
+
+  span::after {
+    content: '';
+    margin-left: 25px;
+  }
+
+  span::before,
+  span::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border-bottom: 1px solid #d4c8bb;
+  }
+}
+
+.cross {
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 30px;
+    height: 2px;
+
+    background-color: $color-white;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+//Style for Buttons//---------------------
+.btn {
+  display: inline-block;
+  min-width: 160px;
+  min-height: 50px;
+  padding: 10px 30px;
+
+  font-family: $font-family-bold;
+  font-size: 1.8em;
+  text-align: center;
+  text-transform: uppercase;
+
+  outline: none;
+}
+
+.btn-primary {
+  @extend .btn;
+  color: $color-text-white;
+
+  background-color: $color-brown;
+  border: none;
+
+  &:hover {
+    background-color: $color-brown-dark;
+  }
+
+  &:active {
+    color: rgba($color-text-white, .3);
+  }
+
+  &:disabled {
+    background-color: $color-grey-light;
+  }
+}
+
+.btn-secondary {
+  @extend .btn;
+  background-color: $color-bg-lightgrey;
+  color: $color-text-black;
+  border: 1px solid $color-border;
+
+  &:hover {
+    border: 1px solid $color-border-hover;
+  }
+
+  &:active {
+    color: rgba($color-text-black, .3);
+    background-color: $color-btn-arrows-down;
+    border: 1px solid transparent;
+  }
+}
+
+.btn-third {
+  @extend .btn;
+  color: $color-text-white;
+  border: 1px solid #505050;
+
+  &:hover {
+    border: 1px solid #5c5c5c;
+  }
+
+  &:active {
+    color: rgba($color-text-white, .3);
+    background-color: #252525;
+    border: 1px solid transparent;
+  }
+}
+
+//Style for Slider dots//------------------------
+.slider__dots {
+  text-align: center;
+}
+
+.slider__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 12px;
+  margin-left: 12px;
+
+  border: 1px solid #353535;
+  transform: rotate(45deg);
+  cursor: pointer;
+
+  &:hover {
+    background-color: #353535;
+  }
+
+  &:active {
+    background-color: $color-white;
+  }
+}

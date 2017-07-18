@@ -1,0 +1,178 @@
+//Style for Radio buttons//------------------------
+input[type="radio"]:enabled,
+input[type="radio"]:disabled {
+  display: none;
+}
+
+.radio {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 70px;
+  padding-right: 22px;
+  padding-left: 22px;
+  padding-bottom: 120px;
+
+  @include font-size-regular;
+  text-transform: lowercase;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 65px;
+    height: 110px;
+
+    transform: translateX(-50%);
+    background: url(../img/beards.svg) no-repeat 7px top;
+    background-size: 355px 105px;
+
+    transition: .3s ease;
+  }
+}
+
+.radio:hover::before {
+  background-position-y: 5px;
+}
+
+.beard2::before {
+  background-position-x: -70px;
+}
+
+.beard3::before {
+  background-position-x: -145px;
+}
+
+.beard4::before {
+  background-position-x: -223px;
+}
+
+.beard5::before {
+  background-position-x: -300px;
+}
+
+.radio input[type="radio"]:enabled + .radio-indicator,
+.radio input[type="radio"]:disabled + .radio-indicator {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+
+  background-color: $color-white;
+  border: 1px solid #d4c8bb;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.radio input[type="radio"]:checked + .radio-indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 17px;
+  height: 17px;
+
+  background-color: $color-white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio:hover input[type="radio"] + .radio-indicator{
+  border: 1px solid $color-border-down;
+}
+
+.radio:active input[type="radio"] + .radio-indicator,
+.radio input[type="radio"]:checked + .radio-indicator  {
+  border: 1px solid $color-border-hover;
+  background-color: $color-border-hover;
+}
+
+
+//Style for Checkbox buttons//------------------------
+input[type="checkbox"]:enabled,
+input[type="checkbox"]:disabled {
+  display: none;
+}
+
+.checkbox {
+  position:relative;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 60px;
+
+  @include font-size-regular;
+}
+
+.checkbox input[type="checkbox"]:enabled + .check-indicator,
+.checkbox input[type="checkbox"]:disabled + .check-indicator {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 35px;
+  height: 35px;
+
+  transform: translateY(-50%);
+  background-color: $color-white;
+  border: 1px solid #d4c8bb;
+}
+
+.checkbox input[type="checkbox"]:checked + .check-indicator::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+
+  background-color: $color-black;
+  transform: rotate(45deg);
+}
+
+.checkbox input[type="checkbox"]:checked + .check-indicator::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  width: 20px;
+  height: 2px;
+
+  background-color: $color-black;
+  transform: rotate(-45deg);
+}
+
+.checkbox:hover input[type="checkbox"] + .check-indicator {
+  border: 1px solid $color-border-down;
+}
+
+.checkbox:active input[type="checkbox"] + .check-indicator,
+.checkbox input[type="checkbox"]:checked + .check-indicator {
+  border: 1px solid $color-border-hover;
+  background-color: $color-border-hover;
+}
+
+//Style for Input text//------------------------
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 14px 15px;
+
+  @include font-size-regular;
+  color: #000;
+  background-color: $color-white;
+  border: 1px solid #d4c8bb;
+  outline: none;
+
+  &:hover {
+    border: 1px solid $color-border-down;
+  }
+
+  &:focus {
+    border: 1px solid $color-brown;
+  }
+}

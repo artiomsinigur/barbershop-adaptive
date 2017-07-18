@@ -1,0 +1,82 @@
+.page-header {
+
+  &__logo {
+    height: 85px;
+    background-color: #242424;
+    text-align: center;
+
+    a {
+      display: inline-block;
+      padding: 27px 10px;
+    }
+
+    img {
+      width: auto;
+      height: 30px;
+    }
+  }
+}
+
+@include tablet {
+  .page-header {
+    position: relative;
+    padding-bottom: 400px;
+
+    &__logo {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 400px;
+      padding-top: 20px;
+
+      background: url(../img/bg-top-1.jpg);
+      background-repeat: no-repeat;
+      background-position: center 0;
+      background-size: cover;
+
+      img {
+        width: auto;
+        height: 101px;
+      }
+    }
+  }
+
+  @include retina {
+    .page-header__logo {
+      background-image: url(../img/bg-top-1@2x.jpg);
+    }
+  }
+
+  .header-inner {
+    padding-bottom: 215px;
+
+    .page-header__logo {
+      height: 215px;
+    }
+  }
+}
+
+@include desktop {
+  .page-header {
+    padding-bottom: 650px;
+
+    &__logo {
+      height: 650px;
+      padding-top: 55px;
+
+      img {
+        width: auto;
+        height: 153px;
+      }
+    }
+  }
+
+  .header-inner {
+    padding-bottom: 310px;
+
+    .page-header__logo {
+      height: 310px;
+    }
+  }
+}
+

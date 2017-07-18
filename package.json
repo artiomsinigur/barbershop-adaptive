@@ -1,0 +1,23 @@
+{
+  "name": "barbershop-adaptive",
+  "version": "2.0.0",
+  "description": "Barbershop store adaptive version",
+  "main": "Gruntfile.js",
+  "author": "Artiom",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artiomsinigur/barbershop-adaptive.git"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0"
+  }
+}

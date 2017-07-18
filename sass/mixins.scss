@@ -1,0 +1,79 @@
+@mixin mobile {
+  @media (max-width: #{$mobile-width-only}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin outline {
+  //min-height: 70px;
+  outline-color: tomato;
+  outline-style: dashed;
+  outline-width: 1px;
+}
+
+@mixin container {
+  min-width: 320px;
+  margin: 0 auto;
+
+  @include tablet {
+    width: 640px;
+  }
+
+  @include desktop {
+    width: 960px;
+  }
+}
+
+@mixin no-list-style {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+//Typography
+@mixin font-size-regular {
+  font-family: $font-family-regular;
+  font-size: 1.8em;
+}
+
+@mixin font-size-large {
+  font-family: $font-family-bold;
+  font-size: 3.0em;
+}
+
+@mixin font-size-x-large {
+  font-family: $font-family-bold;
+  font-size: 4.0em;
+}
+
+@mixin font-size-xx-large {
+  font-family: $font-family-bold;
+  font-size: 7.2em;
+}
+

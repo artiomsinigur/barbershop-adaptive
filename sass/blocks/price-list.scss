@@ -1,0 +1,212 @@
+.price-list {
+  padding-bottom: 60px;
+  padding-top: 50px;
+
+  color: $color-text-white;
+  background-color: $color-grey-dark;
+
+  &__wrapper {
+    @include container;
+    padding: 0 6%;
+  }
+
+  &__title {
+    margin-top: 0;
+    color: $color-text-white;
+    text-align: center;
+  }
+
+  &__items {
+    margin-bottom: 20px;
+    font-size: 2em;
+  }
+
+  &__item {
+    @include no-list-style;
+    position: relative;
+    margin-bottom: 5px;
+    padding-bottom: 37px;
+
+    letter-spacing: -0.31em;
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+
+      letter-spacing: normal;
+    }
+
+    li:first-child {
+      display: none;
+    }
+
+    li:nth-child(2) {
+      width: 70%;
+      font-family: $font-family-bold;
+    }
+
+    li:nth-child(3) {
+      position: absolute;
+      left: 0;
+      top: 30px;
+    }
+
+    li:nth-child(3)::before {
+      content: '(';
+    }
+
+    li:nth-child(3)::after {
+      content: ')';
+    }
+
+    li:last-child {
+      width: 30%;
+    }
+  }
+
+  &__time {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 40px;
+    padding-left: 115px;
+
+    border: 1px solid #505050;
+    background: url(../img/icon-clock.svg) no-repeat 20px 50%;
+    background-size: 60px 60px;
+
+    p {
+      margin: 0;
+      font-size: 2em;
+    }
+  }
+}
+
+@include tablet {
+  .price-list {
+    padding-top: 70px;
+
+    &__wrapper {
+      padding: 0;
+    }
+
+    &__title {
+      @include font-size-x-large;
+      margin-bottom: 45px;
+      text-align: left;
+    }
+
+    &__items {
+      display: table;
+      width: 100%;
+      margin-bottom: 10px;
+      border-collapse: collapse;
+    }
+
+    &__item {
+      display: table-row;
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+      li {
+        display: table-cell;
+        padding: 12px 0;
+        padding-right: 10px;
+        padding-left: 15px;
+
+        border: 1px solid #505050;
+      }
+
+      li:first-child {
+        display: table-cell;
+        width: 70px / 640px * 100%;
+        padding-right: 0;
+        padding-left: 0;
+
+        color: #828282;
+        text-align: center;
+      }
+
+      li:nth-child(2) {
+        display: table-cell;
+        width: 250px / 640px * 100%;
+      }
+
+      li:nth-child(3) {
+        display: table-cell;
+        position: relative;
+        top: 0;
+        width: 160px / 640px * 100%;
+      }
+
+      li:nth-child(3)::before {
+        content: none;
+      }
+
+      li:nth-child(3)::after {
+        content: none;
+      }
+
+      li:last-child {
+        display: table-cell;
+        width: 160px / 640px * 100%;
+      }
+    }
+
+    &__time {
+      padding-top: 32px;
+      padding-bottom: 32px;
+      padding-left: 185px;
+
+      background-position-x: 40px;
+      background-size: 75px 75px;
+
+      p {
+        @include font-size-large;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .price-list {
+    padding-top: 90px;
+
+    &__wrapper {
+      @include clearfix;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__items {
+      float: left;
+      width: 630px / 960px * 100%;
+      margin-bottom: 0;
+    }
+
+    &__time {
+      float: right;
+      width: 270px / 960px * 100%;
+      height: 275px;
+      padding-top: 190px;
+      padding-right: 65px;
+      padding-bottom: 25px;
+      padding-left: 65px;
+
+      background-position: 50% 30px;
+      background-size: 140px 140px;
+
+      p {
+        font-family: $font-family-regular;
+        font-size: 2em;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+
+
+
