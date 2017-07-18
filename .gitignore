@@ -2,7 +2,7 @@
 *.sublime*
 .DS_Store
 Thumbs.db
-barbershop-all/*.psd
+barbershop-all/*
+node_modules
 *.ai
 *.log
-css/*.css
