@@ -1,0 +1,8 @@
+.idea
+*.sublime*
+.DS_Store
+Thumbs.db
+barbershop-all/*.psd
+*.ai
+*.log
+css/*.css
